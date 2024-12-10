@@ -66,17 +66,17 @@ main {
   position: absolute;
   font-size: large;
   padding: 1.5rem;
-  line-height: 1.6;
-  z-index: 10; /* Asegura que la carta quede encima del sobre */
+  line-height: 1.4;
+  z-index: 10;
   background: rgba(255, 255, 255, 0.918);
   width: 100%;
-  max-width: 500px;
+  /* max-width: 500px; */
   transition: all 0.75s;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(50px); /* Inicialmente fuera de vista hacia abajo */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 8px 20px rgba(0, 0, 0, 0.1); /* Sombra para efecto 3D */
-  border-radius: 8px; /* Bordes redondeados */
+  transform: translateY(50px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 .hidden {
   opacity: 0;
@@ -234,6 +234,7 @@ main {
     font-size: 3rem;
   }
 }
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
 
 /* Firma dentro del papel */
 .signature {
@@ -242,7 +243,7 @@ main {
   color: #ff3234;
   display: block;
   margin-top: 2rem;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Dancing Script', cursive; /* Fuente manuscrita específica */
   text-align: center;
   opacity: 0.8; /* Le damos un toque sutil */
 }
