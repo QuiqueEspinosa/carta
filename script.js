@@ -57,3 +57,28 @@ btnCloseElement.addEventListener('click', () => {
     coverElement.classList.remove('open-cover');
   }, 500);
 });
+
+// Crear las partículas aleatorias
+const rainElement = document.querySelector('.rain');
+
+function createRain() {
+  const heartOrFlower = Math.random() < 0.5 ? 'heart' : 'flower'; // Aleatorio entre corazón y flor
+  const element = document.createElement('div');
+  element.classList.add(heartOrFlower);
+  element.textContent = heartOrFlower === 'heart' ? '♥' : '🌸';
+
+  // Posición aleatoria
+  const posX = Math.random() * 100; // X aleatorio
+  element.style.left = `${posX}vw`;
+  
+  rainElement.appendChild(element);
+
+  // Eliminar las partículas después de que caen
+  setTimeout(() => {
+    element.remove();
+  }, 5000); // Tiempo de vida de cada partícula
+}
+
+// Crear partículas cada 200ms
+setInterval(createRain, 200);
+

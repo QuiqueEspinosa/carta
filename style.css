@@ -170,3 +170,92 @@ main {
     opacity: 0;
   }
 }
+
+
+.rain {
+  position: fixed; /* Para que no se mueva con el scroll */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1; /* Asegúrate de que esté detrás del contenido */
+  overflow: hidden; /* Oculta cualquier cosa fuera de la pantalla */
+}
+/* Estilo para las flores, ahora no afectan el flujo del documento */
+.heart, .flower {
+  position: absolute;
+  font-size: 2rem;
+  animation: fall 5s infinite linear; /* Animación de caída */
+  z-index: 0; /* Colocarlas detrás de la carta */
+}
+.heart {
+  color: #fe3334;
+}
+
+.flower {
+  color: #ff85a1;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px); /* Empieza fuera de la pantalla */
+  }
+  100% {
+    transform: translateY(100vh); /* Cae hasta el fondo */
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Generar partículas aleatorias */
+@keyframes randomMotion {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(100px) rotate(360deg);
+  }
+}
+
+/* Aseguramos que las partículas caigan desde posiciones aleatorias */
+@keyframes randomSize {
+  0% {
+    font-size: 2rem;
+  }
+  100% {
+    font-size: 3rem;
+  }
+}
+
+/* Firma dentro del papel */
+.signature {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ff3234;
+  display: block;
+  margin-top: 2rem;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  opacity: 0.8; /* Le damos un toque sutil */
+}
+
+/* Logo como marca de agua */
+.logo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 80px;
+  height: auto;
+  max-width: 100%; /* Responsivo */
+  opacity: 0.2; /* Translucido */
+  z-index: 1; /* Lo coloca detrás del texto */
+}
+
