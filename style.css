@@ -1,0 +1,172 @@
+/* reset css */
+* {
+  min-width: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* styles */
+body {
+  background-color: #fad7df;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.container-letter {
+  position: relative;
+}
+
+.cover {
+  position: absolute;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 100px solid #fe3334;
+  border-bottom: 100px solid transparent;
+  transition: transform 0.75s;
+  transform-origin: top;
+}
+
+.paper {
+  position: absolute;
+  font-size: large;
+  padding: 1.5rem;
+  line-height: 1.6;
+  z-index: 10; /* Asegura que la carta quede encima del sobre */
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.75s;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(50px); /* Inicialmente fuera de vista hacia abajo */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2), 0px 8px 20px rgba(0, 0, 0, 0.1); /* Sombra para efecto 3D */
+  border-radius: 8px; /* Bordes redondeados */
+}
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.letter {
+  border-left: 200px solid #ff989e;
+  border-right: 200px solid #ff989e;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid #ff858a;
+}
+
+.options {
+  display: flex;
+  gap: 5rem;
+}
+
+.options button {
+  color: #ff3234;
+  font-weight: 600;
+  border-radius: 3px;
+  background: #fad7df;
+  padding: 0.5rem 1rem;
+  border: 1px solid #fe3334;
+  cursor: pointer;
+}
+
+.options button:hover {
+  background: #ff989e;
+  color: white;
+}
+
+.open-cover {
+  transform: rotatex(180deg);
+}
+
+.open-paper {
+  animation: openPaper 0.5s forwards;
+}
+
+@keyframes openPaper {
+  0% {
+    transform: translateY(50px); /* Empieza por abajo */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-150px); /* Llega al centro */
+    opacity: 1;
+  }
+}
+
+.close-paper {
+  animation: closePaper 0.5s forwards;
+}
+
+@keyframes closePaper {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(50px); /* Se va hacia abajo */
+    opacity: 0;
+  }
+}
+
+.heart {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 46.5%;
+  margin: auto;
+  font-size: 3rem;
+  color: #fe3334;
+  animation: crecer 1s forwards;
+}
+
+@keyframes crecer {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 3;
+    opacity: 0;
+  }
+}
