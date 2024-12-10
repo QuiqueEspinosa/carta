@@ -68,7 +68,7 @@ main {
   padding: 1.5rem;
   line-height: 1.6;
   z-index: 10; /* Asegura que la carta quede encima del sobre */
-  background: white;
+  background: rgba(255, 255, 255, 0.918);
   width: 100%;
   max-width: 500px;
   transition: all 0.75s;
@@ -129,7 +129,7 @@ main {
     opacity: 0;
   }
   100% {
-    transform: translateY(-150px); /* Llega al centro */
+    transform: translateY(-170px); /* Llega al centro */
     opacity: 1;
   }
 }
