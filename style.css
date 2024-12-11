@@ -237,15 +237,16 @@ main {
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
 
 /* Firma dentro del papel */
-.signature {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #ff3234;
-  display: block;
-  margin-top: 2rem;
-  font-family: 'Dancing Script', cursive; /* Fuente manuscrita específica */
-  text-align: center;
-  opacity: 0.8; /* Le damos un toque sutil */
+.signature img {
+  display: block; /* Asegura que se comporte como un bloque */
+  margin: 0 auto; /* Centra la firma horizontalmente */
+  max-width: 100%; /* Evita que sea más grande que su contenedor */
+  height: auto; /* Mantiene la proporción */
+  opacity: 0.8; /* Le da un toque sutil */
+}
+.signature img {
+  width: 160px; /* Ancho deseado */
+  height: auto; /* Ajusta automáticamente la altura */
 }
 
 /* Logo como marca de agua */
